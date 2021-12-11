@@ -17,19 +17,19 @@ it ("calculator function should understand 'add', 'sub', 'mult' and 'div' operat
 });
 
 it ("'add' function should return addition of input parameters", async () => {
-    expect( await Calculator.performOperation('add', 'I, IV, X, XX')).toBe (35);
+    expect( await Calculator.performOperation('add', 'I,IV,X,XX')).toBe (35);
 });
 
 it ("'sub' function should return subtraction of input parameters", async () => {
-    expect( await Calculator.performOperation('sub', 'L, III, X, VI, I, IX')).toBe (21);
+    expect( await Calculator.performOperation('sub', 'L,III,X,VI,I,IX')).toBe (21);
 });
 
 it ("'mult' function should return multiplication of input parameters", async () => {
-    expect( await Calculator.performOperation('mult', 'I, II, III, IV, V')).toBe (120);
+    expect( await Calculator.performOperation('mult', 'I,II,III,IV,V')).toBe (120);
 });
 
 it ("'div' function should return multiplication of input parameters", async () => {
-    expect( await Calculator.performOperation('div', 'LX, III, II')).toBe (10);
+    expect( await Calculator.performOperation('div', 'LX,III,II')).toBe (10);
 });
 
 it ("tests to check if input includes only 1 operand", async () => {
