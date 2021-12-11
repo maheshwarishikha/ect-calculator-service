@@ -4,7 +4,7 @@ const Converter = require('./converter');
 exports.performOperation =  async (operation, args) => {
 
     let input_arr = args_string_to_array(args);
-    
+
     if ( input_arr.length === 1 ){
         return (input_arr[0]);
     }
@@ -55,6 +55,6 @@ exports.performOperation =  async (operation, args) => {
 };
 
 args_string_to_array = (args) => {
-    let arr = args.split(", ");
+    let arr = args.split(",");
     return ( arr );
 };

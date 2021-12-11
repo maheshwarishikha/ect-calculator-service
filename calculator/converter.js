@@ -10,9 +10,13 @@ exports.convert_romanArr_to_numberArr = async (roman_arr) => {
 
     for (let i=0; i < roman_arr.length; i++) {
         let url = api + roman_arr[i];
-        const response = await axios.get(url);
-        // console.log(response.data);
-        number_arr.push(response.data);
+        try{
+            const response = await axios.get(url);
+            // console.log(response.data);
+            number_arr.push(response.data);
+        } catch {
+            return ('Bad request');
+        }
     }
     
     return (number_arr);
