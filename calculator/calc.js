@@ -16,8 +16,10 @@ exports.performOperation =  async (operation, args) => {
         let addition=0;
         for ( let i = 0; i < roman_to_number_arr.length; i++ ){
             addition += roman_to_number_arr[i];
-        }    
-        return (addition);
+        }
+
+        const roman_value = await Converter.convert_number2Roman(addition);
+        return (roman_value);
 
     } else if ( operation === 'sub') {
     
@@ -27,7 +29,9 @@ exports.performOperation =  async (operation, args) => {
         for ( let i = 1; i < roman_to_number_arr.length; i++ ){
             subtraction -= roman_to_number_arr[i];
         }
-        return (subtraction);
+
+        const roman_value = await Converter.convert_number2Roman(subtraction);
+        return (roman_value);
 
     } else if ( operation === 'mult') {
         
@@ -37,7 +41,9 @@ exports.performOperation =  async (operation, args) => {
         for ( let i = 1; i < roman_to_number_arr.length; i++ ){
             product *= roman_to_number_arr[i];
         }
-        return (product);
+
+        const roman_value = await Converter.convert_number2Roman(product);
+        return (roman_value);
 
     } else if ( operation === 'div') {
         
@@ -47,7 +53,9 @@ exports.performOperation =  async (operation, args) => {
         for ( let i = 1; i < roman_to_number_arr.length; i++ ){
             divisor /= roman_to_number_arr[i];
         }
-        return (divisor);
+
+        const roman_value = await Converter.convert_number2Roman(divisor);
+        return (roman_value);
 
     } else {
         return ("Unsupported Operation");

@@ -34,3 +34,16 @@ exports.convert_romanArr_to_numberArr = async (roman_arr) => {
     // }
 };
 
+exports.convert_number2Roman = async (number) => {
+
+    let api="http://localhost:3000/to-roman?value=";
+
+    let url = api + number;
+    try{
+        const response = await axios.get(url);
+        // console.log(response.data);
+        return(response.data);
+    } catch {
+            return ('Bad request');
+    }
+}
